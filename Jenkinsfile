@@ -18,7 +18,9 @@ pipeline {
 
     stage ('Run NPM') {
       steps {
-        sh "npm start"
+        nodejs(nodeJSInstallationName: 'Node 16') {
+          sh 'npm start'
+        }
       }
     }
   }
